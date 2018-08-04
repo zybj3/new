@@ -1,26 +1,46 @@
-public class Student{
+public class Student
+{
 	// add student attributes here
 	// set this attributes private and use set/get function to operate these attributes
+
 	private String name;
-	private String age;
+	private int age;
+	private double gpa;
 
-	public Student(){
-
+	public Student(String name,int age,double gpa)
+	{
+		setName(name);
+		setAge(age);
+		setGpa(gpa);
 	}
 
-	public void setName(String name){
+	public void setName(String name)
+	{
 		this.name = name;
 	}
 
-	public String getName(){
+	public String getName()
+	{
 		return this.name;
 	}
 
-	public void setAge(String age){
+	public void setGpa(double gpa)
+	{
+		this.gpa = gpa;
+	}
+
+	public double getGpa()
+	{
+		return this.gpa;
+	}
+
+	public void setAge(int age)
+	{
 		this.age = age;
 	}
 
-	public String getAge(){
+	public int getAge()
+	{
 		return this.age;
 	}
 }

@@ -7,8 +7,8 @@ public class FileUtils{
 		// this function use to delete one student
 	}
 
-	public static Student get(){
-		// this function ues to get one student
-	}
+//	public static Student get(){
+//		// this function ues to get one student
+//	}
 
 }
