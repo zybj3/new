@@ -1,3 +1,4 @@
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -13,5 +14,7 @@ public class Main{
 	public static void main(String[] args) throws IOException {
         FileUtils.insert(new Student("hiall1",20,4.0));
         FileUtils.insert(new Student("hiall2",30,4.0));
+        FileUtils.get();
+        FileUtils.get();
 	}
 }

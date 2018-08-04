@@ -1,3 +1,6 @@
-Name Age GPA
+hiall1  20  4.0
+hiall2  30  4.0
+hiall1  20  4.0
+hiall2  30  4.0
 hiall1  20  4.0
 hiall2  30  4.0
