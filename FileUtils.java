@@ -2,7 +2,7 @@ import java.io.*;
 
 public class FileUtils
 {
-    static FileReader fr = null;
+    private static FileReader fr = null;
 
     static {
         try {
@@ -12,7 +12,7 @@ public class FileUtils
         }
     }
 
-    static BufferedReader bf = new BufferedReader(fr);
+    private static BufferedReader bf = new BufferedReader(fr);
 
 
 //    static
@@ -51,16 +51,23 @@ public class FileUtils
 
 	}
 
-	public static void /*Student*/ get() throws IOException
+	public static Student get() throws IOException
     {
 		// this function ues to get one student
 
         String line = bf.readLine();
         String[] strs = line.split("  ");
-        for (int i=0, len=strs.length ; i<len;i++)
-        {
-            System.out.println(strs[i].toString());
-        }
+
+        String name = strs[0];
+        int age = Integer.parseInt(strs[1]);
+        double gpa = Double.parseDouble(strs[2]);
+
+        Student s = new Student(name,age,gpa);
+
+        System.out.println(s.getAge() + ","+ s.getName()+","+s.getGpa());
+        return s;
+
+
 
 
 
