@@ -40,6 +40,7 @@ public class FileUtils
         String sname = student.getName();
         int sage = student.getAge();
         double sgpa = student.getGpa();
+        //System.out.println("111");
 
         FileWriter fw = new FileWriter("information.txt",true);
         BufferedWriter bw = new BufferedWriter(fw);
@@ -50,50 +51,34 @@ public class FileUtils
 	public static void delete(Student student) throws IOException
     {
 		String name = student.getName();
+		//System.out.println(name);
 
         String line = null;
         FileReader delreader = new FileReader("information.txt");
         BufferedReader bf = new BufferedReader(delreader);
 
-
-        int row = 0;
+        List list = new ArrayList();
         while ((line=bf.readLine())!=null)
         {
             String[] strs = line.split("  ");
-
             String delname = strs[0];
-            int age = Integer.parseInt(strs[1]);
-            double gpa = Double.parseDouble(strs[2]);
 
-            if (delname==name)
-            {
-                bf.close();
-                break;
-            }
-
-            row++;
-        }
-
-
-        List list = new ArrayList();
-
-        String line1 = null;
-        FileReader delreader1 = new FileReader("information.txt");
-        BufferedReader bf1 = new BufferedReader(delreader);
-
-        int num = 0;
-        while((line1=bf1.readLine())!=null)
-        {
-            if (num == row)
+            if (delname.equals(name))
             {
                 continue;
             }
+
             else
-            {
+                {
                 list.add(line);
-                num++;
             }
+
+
+
+
+         //   System.out.println("循环一次");
         }
+
 
         BufferedWriter bfw = new BufferedWriter(new FileWriter("information.txt") );
         for (int i = 0; i<list.size();i++)
@@ -103,7 +88,7 @@ public class FileUtils
             bfw.newLine();
         }
 
-        bf1.close();
+        bf.close();
         bfw.close();
     }
 
@@ -122,12 +107,6 @@ public class FileUtils
 
         //System.out.println(s.getAge() + ","+ s.getName()+","+s.getGpa());
         return s;
-
-
-
-
-
-
-	}
+    }
 
 }
