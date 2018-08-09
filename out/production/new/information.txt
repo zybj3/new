@@ -1,0 +1,7 @@
+hiall1  2  2.0
+hiall2  2  2.0
+hiall3  2  2.0
+hiall4  2  2.0
+hiall5  2  2.0
+hiall6  2  2.0
+hiall7  2  2.0

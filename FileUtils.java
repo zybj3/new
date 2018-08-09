@@ -4,17 +4,6 @@ import java.util.List;
 
 public class FileUtils
 {
-    private static FileReader fr = null;
-
-    static {
-        try {
-            fr = new FileReader("information.txt");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private static BufferedReader bf = new BufferedReader(fr);
 
 
 //    static
@@ -95,6 +84,18 @@ public class FileUtils
 	public static Student get() throws IOException
     {
 		// this function ues to get one student
+        FileReader fr = null;
+
+
+        try {
+            fr = new FileReader("information.txt");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+        BufferedReader bf = new BufferedReader(fr);
+
 
         String line = bf.readLine();
         String[] strs = line.split("  ");
